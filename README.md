@@ -15,8 +15,8 @@ https://github.com/kunalg123/sky130CircuitDesignWorkshop/
 |:--:|:--|:--|
 | 🗓️ **Day 1** | [Day1](./Day1/README.md) | CMOS Circuit Design and SPICE Simulations. |
 | 🗓️ **Day 2** | [Day2](./Day2/README.md) | Velocity Saturation and basics of CMOS inverter VTC. |
-| 🗓️ **Day 3** | [Day3](./Day3/README.md) | Design and simulation of basic logic gates (NAND, NOR, XOR) using transistor-level SPICE schematics. |
-| 🗓️ **Day 4** | [Day4](./Day4/README.md) | Sequential circuit analysis – SPICE simulation of flip-flops and latches; timing and setup/hold evaluation. |
-| 🗓️ **Day 5** | [Day5](./Day5/README.md) | Integration and sign-off – combining subcircuits, performing corner analysis, and preparing for layout verification. |
+| 🗓️ **Day 3** | [Day3](./Day3/README.md) | CMOS Switching threshold and dynamic simulations |
+| 🗓️ **Day 4** | [Day4](./Day4/README.md) | Static Behavior Evaluation: CMOS Inverter Robustness and Noise Margin |
+| 🗓️ **Day 5** | [Day5](./Day5/README.md) | CMOS power supply and device variation robustness evaluation |
 
 ---
