@@ -12,7 +12,7 @@ https://github.com/kunalg123/sky130CircuitDesignWorkshop/
 ## 📘 Repository Overview  
 
 | Day | Description |
-|:--:|:--|:--|
+|:--:|:--|
 | 🗓️ [**Day 1**](./Day1/README.md) | CMOS Circuit Design and SPICE Simulations. |
 | 🗓️ [**Day 2**](./Day2/README.md) | Velocity Saturation and basics of CMOS inverter VTC. |
 | 🗓️ [**Day 3**](./Day3/README.md) | CMOS Switching threshold and dynamic simulations |
