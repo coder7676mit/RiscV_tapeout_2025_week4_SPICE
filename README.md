@@ -6,12 +6,14 @@ CMOS design and SPICE simulations (as in the sky130 workshop), you will see the 
 side of what STA approximates. This strengthens your intuition about slack, delay, noise 
 margins, and variation impacts.
 
+Download workshop Collaterals from below link 
+https://github.com/kunalg123/sky130CircuitDesignWorkshop/
+
+
 ## 📘 NgSPICE
 
 ![alt](ngspice.png)
 
-Download workshop Collaterals from below link 
-https://github.com/kunalg123/sky130CircuitDesignWorkshop/
 
 ## 📘 Repository Overview  
 
