@@ -8,7 +8,7 @@ margins, and variation impacts.
 
 ## 📘 NgSPICE
 
-![alt](../Day1/ngspice.png)
+![alt](ngspice.png)
 
 Download workshop Collaterals from below link 
 https://github.com/kunalg123/sky130CircuitDesignWorkshop/
