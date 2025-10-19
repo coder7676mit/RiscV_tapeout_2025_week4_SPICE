@@ -13,10 +13,10 @@ https://github.com/kunalg123/sky130CircuitDesignWorkshop/
 
 | Day | Folder | Description |
 |:--:|:--|:--|
-| 🗓️ **Day 1** | [Day1](./Day1/README.md) | CMOS Circuit Design and SPICE Simulations. |
-| 🗓️ **Day 2** | [Day2](./Day2/README.md) | Velocity Saturation and basics of CMOS inverter VTC. |
-| 🗓️ **Day 3** | [Day3](./Day3/README.md) | CMOS Switching threshold and dynamic simulations |
-| 🗓️ **Day 4** | [Day4](./Day4/README.md) | Static Behavior Evaluation: CMOS Inverter Robustness and Noise Margin |
-| 🗓️ **Day 5** | [Day5](./Day5/README.md) | CMOS power supply and device variation robustness evaluation |
+| 🗓️ [**Day 1**](./Day1/README.md) | CMOS Circuit Design and SPICE Simulations. |
+| 🗓️ [**Day 2**](./Day2/README.md) | Velocity Saturation and basics of CMOS inverter VTC. |
+| 🗓️ **Day 3** (./Day3/README.md) | CMOS Switching threshold and dynamic simulations |
+| 🗓️ **Day 4** (./Day4/README.md) | Static Behavior Evaluation: CMOS Inverter Robustness and Noise Margin |
+| 🗓️ **Day 5** (./Day5/README.md) | CMOS power supply and device variation robustness evaluation |
 
 ---
