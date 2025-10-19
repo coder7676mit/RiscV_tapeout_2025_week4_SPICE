@@ -98,7 +98,7 @@ ngspice day5_inv_supplyvariation_Wp1_Wn036.spice
 
 Below image is waveform for different supplies:
 
-![Alt Text](3.png)
+![Alt Text](supply_var.png)
 
 🤔**How to Calculate Gain from SPICE VTC Plot??**
 
@@ -113,6 +113,13 @@ To calculate the gain of the CMOS inverter from the Voltage Transfer Characteris
 3️⃣ **Compute Gain**:
 
 Gain = (y0 − y1) / (x0 − x1)
+
+Below is the screenshot of the obtained result of the VTC curves for different supply voltages, gain in curve corresponding to 1.8v is (1.706-0.076)/(1.008-0.772)=6.907. Gain in curve corresponding to 0.8v is (0.770-0.021)/(0.511-0.428)=9.024 (increases as supply voltage decreases, but then decreases again because supply would not be enough for the device to operate):
+
+
+![alt](gain_comp.png)
+
+---
 
 ### `Static behaviour evaluation-CMOS inverter robustness-Device variation`
 
@@ -238,8 +245,13 @@ ngspice day5_inv_supplyvariation_Wp1_Wn036.spice
 plot out vs in
 ```
 
-Below image is output waveform of device variation:
+Below is the screenshot of the obtained result of the VTC curve, and since Wp is larger than Wn we can see that the output logic 1 is held for longer than output logic 0 (because of strong pfet and weak nfet), and subsequently the switching voltage shifts to the right (compared to Vdd/2, in an ideal CMOS) to a value of 0.987v which is very close to Vdd/2=0.9, so even with huge device variation, the CMOS device is pretty robust:
 
-![Alt Text](8.png)
+![Alt Text](device_vary.png)
+
+
+
+![Alt Text](device_vary2.png)
+
 
 As the **PMOS width** is larger than the **NMOS width**, the PMOS provides a stronger pull-up path — causing the output to stay high for a longer duration when compared to the NMOS curve.
