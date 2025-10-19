@@ -100,7 +100,15 @@ plot out vs in
 
 Below image shows the Voltage Transfer Characteristics (VTC) of a CMOS Inverter:
 
-![Alt Text](3.png)
+![Alt Text](vtc.png)
+
+
+Below is the screenshot of the obtained result of the VTC, where switching threshold is around 0.876v:
+
+
+![Alt Text](vtc2.png)
+
+---
 
 <details> <summary><strong>day3_inv_tran_Wp084_Wn036.spice </strong></summary>
 
@@ -151,7 +159,17 @@ Below image shows the output waveform of transient analysis of a CMOS inverter, 
 - Output **rise time delay** = Time at 50% of rising edge − Time at 50% of falling edge  
 - Output **fall time delay** = Time at 50% of falling edge − Time at 50% of rising edge  
 
-![Alt Text](4.png)
+![Alt Text](trans.png)
+
+
+Below is the screenshot of the obtained result of the transient analysis, where rise delay and fall delay are around 0.322ns and 0.285ns at 0.9v (50%) respectively
+
+![Alt Text](risedelay.png)
+
+
+![Alt Text](falldelay.png)
+
+
 
 <a name="comparison-vtc-vs-tran"></a>
 
