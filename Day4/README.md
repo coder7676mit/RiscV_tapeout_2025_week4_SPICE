@@ -128,7 +128,7 @@ plot out vs in
 
 Below image is the waveform of VTC curve to get the Noise Margin:
 
-![Alt Text](4.png)
+![Alt Text](noise-margin.png)
 
 >🤔 **How to Calculate Noise Margin from SPICE VTC Plot ??**
 
@@ -146,3 +146,7 @@ In the interactive **ngspice VTC plot**, you can manually extract values for Noi
 
 ✅ **Noise Margin Low (NML)**:  
 `NML = VIL − VOL = x0 − y1`
+
+Below is the screenshot of the obtained result of the VTC, and VIL is around 0.7v and VOH is around 1.7v. VOL is around 0.08v and VIH is around 1v (noise margin low is around 0.62v and noise margin high=0.7):
+
+![Alt Text](noise-margin2.png)
