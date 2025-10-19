@@ -73,7 +73,7 @@ SPICE simulations are essential for designing circuits that are reliable and eff
 
 ### `CMOS Inverter Circuit Diagram`
 
-![Alt Text](1.png)
+![Alt Text](inverter.png)
 
 This schematic shows a standard **CMOS inverter**:
 - **Vin** is applied to both PMOS and NMOS gates.
@@ -93,7 +93,7 @@ This forms the basis of digital NOT gates used in logic families.
 
 #### `SPICE Simulation Results`
 
-![Alt Text](2.png)
+![Alt Text](spice.png)
 
 The `top graph` indicates the current-voltage `(I-V) characteristics` of a CMOS inverter. It shows the relationship between the drain-source current (Ids) and the output voltage (Vout) for various input voltages (Vin).
 
@@ -107,7 +107,7 @@ In digital timing analysis, **cell delay** is not a fixed number—it depends on
 
 The delay values are stored in **2D LUTs (Lookup Tables)** as shown below.
 
-![Alt Text](3.png)
+![Alt Text](delaytable.png)
 
 **Delay Table Structure:**
 
@@ -134,7 +134,7 @@ If a cell output pin drives multiple fanout cells, the total capacitance on the 
 
 **Illustrative Scenario:** The figure below illustrates a scenario where a logic gate **G1** drives three other gates (**G2**, **G3**, and **G4**) through a shared interconnect network. The net includes multiple parasitic capacitances due to interconnect segments.
 
-![Alt Text](7.png)
+![Alt Text](capacitance.png)
 
 The **total capacitance seen at the output of G1** is the sum of:
 - The **output pin capacitance** of G1 itself (`Cout(G1)`)
@@ -161,7 +161,7 @@ To estimate the delay at `60fF`, we perform linear interpolation between `x9` an
 
 Delay_60fF = x9 + [(60fF - 50fF) / (70fF - 50fF)] * (x10 - x9)
 
-![Alt Text](4.png)
+![Alt Text](delaycalc.png)
 
 In the example below, we want to estimate the delay for **CBUF2** when:
 
@@ -177,7 +177,7 @@ From the CBUF2 delay table:
 
 Therefore, the delay of CBUF2 under these conditions is taken directly as `y15`.
 
-![Alt Text](5.png)
+![Alt Text](delaycalc.png)
 
 ℹ️**Note:** If the required input slew or output load falls **outside the bounds** of the LUT (e.g., >110fF or <10fF), then **extrapolation** is used. However, extrapolated values are **less accurate** and can deviate from actual SPICE results. Designers should aim to stay within the characterized table ranges whenever possible for reliable STA.
 
@@ -186,15 +186,15 @@ Therefore, the delay of CBUF2 under these conditions is taken directly as `y15`.
 
 This image shows the structure of an NMOS transistor with its key components and terminals labeled.
 
-![Alt Text](8.png)
+![Alt Text](nmos.png)
 
 This image shows the NMOS transistor when **Vgs = 0**
 
-![Alt Text](9.png)
+![Alt Text](switch.png)
 
 This image shows the NMOS transistor when **Vgs > Vth (threshold voltage)**:
 
-![Alt Text](10.png)
+![Alt Text](linear.png)
 
 ### `NMOS Transistor - Body Effect (Substrate Bias Effect)`
 
@@ -212,13 +212,9 @@ This effect is known as the **Body Effect** or **Substrate Bias Effect**.
   <img src="equation.png" width="500">
 </p>
 
-![Alt Text](11.png)
+![Alt Text](body.png)
 
-![Alt Text](12.png)
 
-![Alt Text](13.png)
-
-![Alt Text](14.png)
 
 **γ (Body Effect Coefficient)** and **Φ<sub>f</sub> (Fermi Potential)** are constants provided by the foundry, which characterize the physical properties of the transistor. These constants are used by **SPICE simulators** to model the device behavior under various body bias conditions and enable accurate circuit simulations.
 
@@ -226,7 +222,7 @@ This effect is known as the **Body Effect** or **Substrate Bias Effect**.
 
 Resistive Region of Operation (V<sub>GS</sub> > V<sub>t</sub>, small V<sub>DS</sub>)
 
-![Alt Text](16.png)
+![Alt Text](resistor.png)
 
 At this stage:
 
@@ -262,13 +258,10 @@ Where:
 In this region, NMOS behaves like a voltage-controlled resistor. The drift current dominates due to the potential difference between source and drain.
 
 
-![Alt Text](17.png)
+![Alt Text](firstorde.png)
 
-![Alt Text](18.png)
 
-![Alt Text](19.png)
 
-![Alt Text](20.png)
 
 ### `Drain current model for linear region of operation`
 
@@ -285,27 +278,18 @@ SPICE simulations allow us to calculate the drain current (**I<sub>D</sub>**) fo
 
 This helps in generating accurate **I<sub>D</sub>-V<sub>DS</sub>** curves and understanding the transistor’s behavior in the linear (resistive) region.
 
-![Alt Text](21.png)
+![Alt Text](spicesim.png)
 
-![Alt Text](22.png)
+
 
 ### `Pinch-off Region Condition`
 
 These images illustrate how the **pinch-off condition** is reached in an NMOS transistor when **V<sub>GS</sub> - V<sub>DS</sub> ≤ V<sub>t</sub>**, causing the channel near the drain to disappear — marking the transition from linear to saturation region.
 
-![Alt Text](23.png)
+![Alt Text](pinchoff.png)
 
-![Alt Text](24.png)
 
-![Alt Text](25.png)
-
-### `Drain Current Model for Saturation Region of Operation`
-
-These images show how the **effective channel length** reduces due to **pinch-off** and how the drain current (**I<sub>D</sub>**) becomes weakly dependent on **V<sub>DS</sub>**, leading to the **saturation region equation** with channel length modulation.
-
-![Alt Text](26.png)
-
-![Alt Text](27.png)
+---
 
 ### `Basic SPICE Setup`
 
@@ -334,9 +318,8 @@ SPICE simulators read an input file called a _SPICE deck_, containing:
 
 The simulator produces waveforms and reports — allowing designers to validate and optimize their circuits before taping out to silicon.
 
-![Alt Text](ref1.png)
+--
 
-![Alt Text](ref.png)
 
 **Analysis Types supported by SPICE:**
 | Analysis Type | Details |
@@ -350,17 +333,10 @@ The simulator produces waveforms and reports — allowing designers to validate 
 | Noise Analysis | Measures the device-generated noise for a given circuit. |
 <br>
 
-The following images show how a SPICE deck is written to perform DC analysis of an NMOS transistor:
-
-![Alt Text](28.png)
-
-![Alt Text](29.png)
-
-![Alt Text](30.png)
 
 ### `Circuit description in SPICE syntax`
 
-![Alt Text](31.png)
+![Alt Text](syntax.png)
 
 | Line in Netlist | Explanation |
 | --------------- | ----------- |
@@ -379,9 +355,9 @@ The following images show how a SPICE deck is written to perform DC analysis of 
 - **Carrier mobility** (U<sub>0</sub>)
 - Other technology-specific constants.
 
-![Alt Text](32.png)
+![Alt Text](techfile.png)
 
-![Alt Text](33.png)
+
 
 In this example:
 
@@ -463,4 +439,4 @@ plot -vdd#branch
 
 **Id vs Vds for different Vgs - sky130 NMOS (W=5um, L=2um)**
 
-![Alt Text](lab1.png)
+![Alt Text](First_spice.png)
