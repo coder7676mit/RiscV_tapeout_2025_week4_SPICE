@@ -76,7 +76,6 @@ For **Short Channel (< 250 nm)** devices:
 
 The figure below compares the **peak drain current (Id)** between a long-channel and short-channel NMOS device:
 
-![Alt Text](8.png)
 
 **Left Plot**: W = 1.8μm, L = 1.2μm → **Long-channel device**
   - Peak current = **410 μA**
