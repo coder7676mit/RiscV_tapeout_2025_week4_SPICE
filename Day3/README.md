@@ -238,7 +238,6 @@ We are evaluating this at Vm, so `Vgs = Vm` for NMOS and `Vgs = Vm − Vdd` for 
 
 Equating **Idsp + Idsn = 0** and solving for **R**, we can express **Vm** as a function of the sizing ratio and mobility factors.
 
-![Alt Text](8.png)
 
 This expression shows how the required **(Wp/Lp) / (Wn/Ln)** ratio can be computed for a given **Vm**, by balancing NMOS and PMOS currents at the switching threshold point **(Vin = Vout = Vm)**.
 
