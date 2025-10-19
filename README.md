@@ -20,3 +20,13 @@ https://github.com/kunalg123/sky130CircuitDesignWorkshop/
 | 🗓️ [**Day 5**](./Day5/README.md) | CMOS power supply and device variation robustness evaluation |
 
 ---
+
+## Acknowledgements 👑
+
+*  [Kunal Ghosh](https://www.vlsisystemdesign.com/)
+
+
+##  Contributors  
+
+**Author:** [coder7676mit](https://github.com/coder7676mit)  
+**Project:** RISC-V Tapeout 2025 – Week 4 (SPICE Simulation)
