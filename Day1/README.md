@@ -73,7 +73,7 @@ SPICE simulations are essential for designing circuits that are reliable and eff
 
 ### `CMOS Inverter Circuit Diagram`
 
-![Alt Text](Images/1.png)
+![Alt Text](1.png)
 
 This schematic shows a standard **CMOS inverter**:
 - **Vin** is applied to both PMOS and NMOS gates.
@@ -93,7 +93,7 @@ This forms the basis of digital NOT gates used in logic families.
 
 #### `SPICE Simulation Results`
 
-![Alt Text](Images/2.png)
+![Alt Text](2.png)
 
 The `top graph` indicates the current-voltage `(I-V) characteristics` of a CMOS inverter. It shows the relationship between the drain-source current (Ids) and the output voltage (Vout) for various input voltages (Vin).
 
@@ -107,7 +107,7 @@ In digital timing analysis, **cell delay** is not a fixed number—it depends on
 
 The delay values are stored in **2D LUTs (Lookup Tables)** as shown below.
 
-![Alt Text](Images/3.png)
+![Alt Text](3.png)
 
 **Delay Table Structure:**
 
@@ -134,7 +134,7 @@ If a cell output pin drives multiple fanout cells, the total capacitance on the 
 
 **Illustrative Scenario:** The figure below illustrates a scenario where a logic gate **G1** drives three other gates (**G2**, **G3**, and **G4**) through a shared interconnect network. The net includes multiple parasitic capacitances due to interconnect segments.
 
-![Alt Text](Images/7.png)
+![Alt Text](7.png)
 
 The **total capacitance seen at the output of G1** is the sum of:
 - The **output pin capacitance** of G1 itself (`Cout(G1)`)
@@ -161,7 +161,7 @@ To estimate the delay at `60fF`, we perform linear interpolation between `x9` an
 
 Delay_60fF = x9 + [(60fF - 50fF) / (70fF - 50fF)] * (x10 - x9)
 
-![Alt Text](Images/4.png)
+![Alt Text](4.png)
 
 In the example below, we want to estimate the delay for **CBUF2** when:
 
@@ -177,7 +177,7 @@ From the CBUF2 delay table:
 
 Therefore, the delay of CBUF2 under these conditions is taken directly as `y15`.
 
-![Alt Text](Images/5.png)
+![Alt Text](5.png)
 
 ℹ️**Note:** If the required input slew or output load falls **outside the bounds** of the LUT (e.g., >110fF or <10fF), then **extrapolation** is used. However, extrapolated values are **less accurate** and can deviate from actual SPICE results. Designers should aim to stay within the characterized table ranges whenever possible for reliable STA.
 
@@ -186,15 +186,15 @@ Therefore, the delay of CBUF2 under these conditions is taken directly as `y15`.
 
 This image shows the structure of an NMOS transistor with its key components and terminals labeled.
 
-![Alt Text](Images/8.png)
+![Alt Text](8.png)
 
 This image shows the NMOS transistor when **Vgs = 0**
 
-![Alt Text](Images/9.png)
+![Alt Text](9.png)
 
 This image shows the NMOS transistor when **Vgs > Vth (threshold voltage)**:
 
-![Alt Text](Images/10.png)
+![Alt Text](10.png)
 
 ### `NMOS Transistor - Body Effect (Substrate Bias Effect)`
 
@@ -209,16 +209,16 @@ This image compares NMOS operation with **Vsb = 0** and **Vsb = positive value**
 This effect is known as the **Body Effect** or **Substrate Bias Effect**. 
 
 <p align="center">
-  <img src="Images/equation.png" width="500">
+  <img src="equation.png" width="500">
 </p>
 
-![Alt Text](Images/11.png)
+![Alt Text](11.png)
 
-![Alt Text](Images/12.png)
+![Alt Text](12.png)
 
-![Alt Text](Images/13.png)
+![Alt Text](13.png)
 
-![Alt Text](Images/14.png)
+![Alt Text](14.png)
 
 **γ (Body Effect Coefficient)** and **Φ<sub>f</sub> (Fermi Potential)** are constants provided by the foundry, which characterize the physical properties of the transistor. These constants are used by **SPICE simulators** to model the device behavior under various body bias conditions and enable accurate circuit simulations.
 
@@ -226,7 +226,7 @@ This effect is known as the **Body Effect** or **Substrate Bias Effect**.
 
 Resistive Region of Operation (V<sub>GS</sub> > V<sub>t</sub>, small V<sub>DS</sub>)
 
-![Alt Text](Images/16.png)
+![Alt Text](16.png)
 
 At this stage:
 
@@ -236,7 +236,7 @@ At this stage:
 - The effective channel length **L** and voltage V(x) profile along x-axis determine the current flow.
 - This is the region where the transistor behaves like a voltage-controlled resistor.
 
-![Alt Text](Images/15.png)
+![Alt Text](15.png)
 
 ### `Drift current theory`
 
@@ -262,20 +262,20 @@ Where:
 In this region, NMOS behaves like a voltage-controlled resistor. The drift current dominates due to the potential difference between source and drain.
 
 
-![Alt Text](Images/17.png)
+![Alt Text](17.png)
 
-![Alt Text](Images/18.png)
+![Alt Text](18.png)
 
-![Alt Text](Images/19.png)
+![Alt Text](19.png)
 
-![Alt Text](Images/20.png)
+![Alt Text](20.png)
 
 ### `Drain current model for linear region of operation`
 
 These images illustrate the derivation of **I<sub>D</sub>** equation for NMOS in linear region, starting from first-order analysis and device physics.
 
 <p align="center">
-  <img src="Images/der.png" width="500">
+  <img src="der.png" width="500">
 </p>
 
 
@@ -285,27 +285,27 @@ SPICE simulations allow us to calculate the drain current (**I<sub>D</sub>**) fo
 
 This helps in generating accurate **I<sub>D</sub>-V<sub>DS</sub>** curves and understanding the transistor’s behavior in the linear (resistive) region.
 
-![Alt Text](Images/21.png)
+![Alt Text](21.png)
 
-![Alt Text](Images/22.png)
+![Alt Text](22.png)
 
 ### `Pinch-off Region Condition`
 
 These images illustrate how the **pinch-off condition** is reached in an NMOS transistor when **V<sub>GS</sub> - V<sub>DS</sub> ≤ V<sub>t</sub>**, causing the channel near the drain to disappear — marking the transition from linear to saturation region.
 
-![Alt Text](Images/23.png)
+![Alt Text](23.png)
 
-![Alt Text](Images/24.png)
+![Alt Text](24.png)
 
-![Alt Text](Images/25.png)
+![Alt Text](25.png)
 
 ### `Drain Current Model for Saturation Region of Operation`
 
 These images show how the **effective channel length** reduces due to **pinch-off** and how the drain current (**I<sub>D</sub>**) becomes weakly dependent on **V<sub>DS</sub>**, leading to the **saturation region equation** with channel length modulation.
 
-![Alt Text](Images/26.png)
+![Alt Text](26.png)
 
-![Alt Text](Images/27.png)
+![Alt Text](27.png)
 
 ### `Basic SPICE Setup`
 
@@ -334,9 +334,9 @@ SPICE simulators read an input file called a _SPICE deck_, containing:
 
 The simulator produces waveforms and reports — allowing designers to validate and optimize their circuits before taping out to silicon.
 
-![Alt Text](Images/ref1.png)
+![Alt Text](ref1.png)
 
-![Alt Text](Images/ref.png)
+![Alt Text](ref.png)
 
 **Analysis Types supported by SPICE:**
 | Analysis Type | Details |
@@ -352,15 +352,15 @@ The simulator produces waveforms and reports — allowing designers to validate 
 
 The following images show how a SPICE deck is written to perform DC analysis of an NMOS transistor:
 
-![Alt Text](Images/28.png)
+![Alt Text](28.png)
 
-![Alt Text](Images/29.png)
+![Alt Text](29.png)
 
-![Alt Text](Images/30.png)
+![Alt Text](30.png)
 
 ### `Circuit description in SPICE syntax`
 
-![Alt Text](Images/31.png)
+![Alt Text](31.png)
 
 | Line in Netlist | Explanation |
 | --------------- | ----------- |
@@ -379,9 +379,9 @@ The following images show how a SPICE deck is written to perform DC analysis of 
 - **Carrier mobility** (U<sub>0</sub>)
 - Other technology-specific constants.
 
-![Alt Text](Images/32.png)
+![Alt Text](32.png)
 
-![Alt Text](Images/33.png)
+![Alt Text](33.png)
 
 In this example:
 
@@ -463,4 +463,4 @@ plot -vdd#branch
 
 **Id vs Vds for different Vgs - sky130 NMOS (W=5um, L=2um)**
 
-![Alt Text](Images/lab1.png)
+![Alt Text](lab1.png)
