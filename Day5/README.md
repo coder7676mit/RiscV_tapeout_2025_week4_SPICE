@@ -114,7 +114,8 @@ To calculate the gain of the CMOS inverter from the Voltage Transfer Characteris
 
 Gain = (y0 − y1) / (x0 − x1)
 
-Below is the screenshot of the obtained result of the VTC curves for different supply voltages, gain in curve corresponding to 1.8v is (1.706-0.076)/(1.008-0.772)=6.907. Gain in curve corresponding to 0.8v is (0.770-0.021)/(0.511-0.428)=9.024 (increases as supply voltage decreases, but then decreases again because supply would not be enough for the device to operate):
+
+Below is the screenshot of the obtained result of the VTC curves for different supply voltages, gain in curve corresponding to 1.8v is (1.68-0.135)/(0.9622-0.7844)=8.6895. Gain in curve corresponding to 0.8v is (0.7725-0.0525)/(0.5011-0.4211)=7.2 (increases as supply voltage decreases, but then decreases again because supply would not be enough for the device to operate):
 
 
 ![alt](gain_comp.png)
