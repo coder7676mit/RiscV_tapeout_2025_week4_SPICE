@@ -2,30 +2,12 @@
 
 ### 📚 Contents
 
-1. **Introduction to Circuit Design and SPICE simulations**
-    - [SPICE Simulations in Electronic Circuit Design](#spice-simulations-in-electronic-circuit-design)
-    - [Why Use SPICE Simulations?](#why-use-spice-simulations)
-    - [Example: Inverter Circuit](#example-inverter-circuit)
-    - [Role of SPICE in Inverter Design](#role-of-spice-in-inverter-design)
-    - [CMOS Inverter Circuit Diagram](#cmos-inverter-circuit-diagram)
-    - [Operation Summary](#operation-summary)
-    - [SPICE Simulation Results](#spice-simulation-results)
-    - [Understanding Delay Tables](#understanding-delay-tables)
-    - [Delay Calculation from LUTs](#delay-calculation-from-luts)
+1. **Introduction to Circuit Design and SPICE simulations** 
       
 2. **NMOS resistive region and saturation region of operation**
-    - [Introduction to Basic Element in Circuit Design - NMOS Transistor](#introduction-to-basic-element-in-circuit-design---nmos-transistor)
-    - [NMOS Transistor - Body Effect (Substrate Bias Effect)](#nmos-transistor---body-effect-substrate-bias-effect)
-    - [NMOS Resistive region of operation with small drain-source voltage](#nmos-resistive-region-of-operation-with-small-drain-source-voltage)
-    - [Drift current theory](#drift-current-theory)
-    - [Drain current model for linear region of operation](#drain-current-model-for-linear-region-of-operation)
-    - [Pinch-off Region Condition](#pinch-off-region-condition)
-    - [Drain Current Model for Saturation Region of Operation](#drain-current-model-for-saturation-region-of-operation)
 
 3. **Introduction to SPICE**
-    - [Basic SPICE Setup](#basic-spice-setup)
-    - [Circuit description in SPICE syntax](#circuit-description-in-spice-syntax)
-    - [SPICE Lab with sky130 models](#spice-lab-with-sky130-models)
+
    
 ### `SPICE Simulations in Electronic Circuit Design`
 
@@ -212,7 +194,7 @@ This effect is known as the **Body Effect** or **Substrate Bias Effect**.
   <img src="equation.png" width="500">
 </p>
 
-![Alt Text](body.png)
+![Alt Text](bodyeffect.png)
 
 
 
@@ -232,7 +214,7 @@ At this stage:
 - The effective channel length **L** and voltage V(x) profile along x-axis determine the current flow.
 - This is the region where the transistor behaves like a voltage-controlled resistor.
 
-![Alt Text](15.png)
+
 
 ### `Drift current theory`
 
@@ -258,7 +240,7 @@ Where:
 In this region, NMOS behaves like a voltage-controlled resistor. The drift current dominates due to the potential difference between source and drain.
 
 
-![Alt Text](firstorde.png)
+![Alt Text](firstorder.png)
 
 
 
