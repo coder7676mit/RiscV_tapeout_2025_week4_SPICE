@@ -378,7 +378,7 @@ To use SPICE with sky130 technology, you can clone the relevant GitHub repositor
 ℹ️Note: You will find all the SPICE example files inside the **`design`** directory.
 
 ```shell
-spatha@spatha-VirtualBox:~/VLSI/sky130CircuitDesignWorkshop/design$ ls
+nagendrakudva123@nagendrakudva123-VirtualBox:~/VLSI/sky130CircuitDesignWorkshop/design$ ls
 day1_nfet_idvds_L2_W5.spice      day2_nfet_idvgs_L015_W039.spice  day3_inv_vtc_Wp084_Wn036.spice        day5_inv_devicevariation_wp7_wn042.spice  sky130_fd_pr
 day2_nfet_idvds_L015_W039.spice  day3_inv_tran_Wp084_Wn036.spice  day4_inv_noisemargin_wp1_wn036.spice  day5_inv_supplyvariation_Wp1_Wn036.spice
 ```
